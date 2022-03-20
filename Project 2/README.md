@@ -1,7 +1,7 @@
 
 # Even Numbers From 1 to 20.
 
-Q1. Write a program to print sum of even numbers from 1 to 20.
+Q1. Write a program to print even numbers from 1 to 20.
 
 ## Screenshots
 

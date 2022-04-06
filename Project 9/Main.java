@@ -1,37 +1,57 @@
-class Employee {
-    int emp_id, emp_salary;
-    String emp_name;
+import java.util.*;
 
-    Employee(int id, String name, int salary) {
-        emp_id = id;
-        emp_name = name;
-        emp_salary = salary;
+class Employee
+{
+    int emp_id;
+    int emp_salary;
+    
+    Employee(int id, int salary)
+    {
+        id = emp_id;
+        salary = emp_salary;
     }
-
-    void display() {
+    
+    void display()
+    {
+        System.out.println("Employee ID : "+emp_id);
+        System.out.println("Employee Salary : "+emp_salary);
+        System.out.println("\n");        
+    }
+    
+    void input()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Employee ID : ");
+        emp_id = sc.nextInt();
+        System.out.println("Enter Employee Salary : ");
+        emp_salary = sc.nextInt();
         System.out.println("\n");
-        System.out.println("Employee Id : " + emp_id);
-        System.out.println("Employee Name : " + emp_name);
-        System.out.println("Employee Salary : " + emp_salary);
     }
 }
 
-class Main {
-    public static void main(String args[]) {
-        Employee MyObj[] = new Employee[5];
-        MyObj[0] = new Employee(1, "Employee 1", 10001);
-        MyObj[1] = new Employee(2, "Employee 2", 10002);
-        MyObj[2] = new Employee(3, "Employee 3", 10003);
-        MyObj[3] = new Employee(4, "Employee 4", 10004);
-        MyObj[4] = new Employee(5, "Employee 5", 10005);
-
+class Main
+{
+    public static void main (String[] args) {
+        Employee emp[] = new Employee[5];
         int sal[] = new int[5];
-
-        for (int i = 0; i < 5; i++) {
-            MyObj[i].display();
-            sal[i] = MyObj[i].emp_salary;
+        
+        emp[0] = new Employee(0, 0);
+        emp[1] = new Employee(0, 0);
+        emp[2] = new Employee(0, 0);
+        emp[3] = new Employee(0, 0);
+        emp[4] = new Employee(0, 0);
+        
+        for (int i = 0; i<5; i++)
+        {
+            emp[i].input();
+            sal[i] = emp[i].emp_salary;
         }
-
+        
+        for (int i = 0; i<5; i++)
+        {
+            emp[i].display();
+        }
+        
         int max = sal[0];
         int arr[] = new int[5];
         int j = 0;
@@ -43,8 +63,10 @@ class Main {
                 j = i;
             }
         }
+        
         System.out.println("\n");
         System.out.println("***********Employee Having Maximum Salary************");
-        MyObj[j].display();
+        emp[j].display();
+        
     }
 }
